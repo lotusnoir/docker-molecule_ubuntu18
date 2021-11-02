@@ -8,8 +8,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends systemd systemd-sysv sudo python3-apt python3-pip python3-setuptools \
-    && pip3 install --no-cache-dir --upgrade pip \
-    && pip3 install --no-cache-dir ansible cryptography jmespath \
+    && python3 -m pip install --no-cache-dir --upgrade pip \
+    && python3 -m pip install --no-cache-dir ansible cryptography jmespath \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc /usr/share/man \
     && rm -f /lib/systemd/system/multi-user.target.wants/* \
